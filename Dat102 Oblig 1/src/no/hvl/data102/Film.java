@@ -2,12 +2,15 @@ package no.hvl.data102;
 
 import java.util.Objects;
 
+import no.hvl.data102.adt.FilmarkivADT;
+
 public class Film {
 	private int filmNr;
 	private String produsent;
 	private String tittel;
 	private int lansert;
 	private String selskap;
+	private Sjanger sjanger;
 	
 	public Film(){
 		filmNr = 0;
@@ -17,12 +20,13 @@ public class Film {
 		selskap = null;
 	}
 	
-	public Film(int filmNr, int lansert, String produsent, String tittel, String selskap){
+	public Film(int filmNr, int lansert, String produsent, String tittel, String selskap, Sjanger sjanger){
 		this.filmNr = filmNr;
 		this.produsent = produsent;
 		this.tittel = tittel;
 		this.lansert = lansert;
 		this.selskap = selskap;
+		this.sjanger = sjanger;
 	}
 
 	public int getFilmNr() {
@@ -65,11 +69,19 @@ public class Film {
 		this.selskap = selskap;
 	}
 	
-	
-	public int hashCode() {
-		return Objects.hash(filmNr, lansert, produsent, selskap, tittel);
+	public Sjanger getSjanger() {
+		return sjanger;
 	}
 
+	public void setSjanger(Sjanger sjanger) {
+		this.sjanger = sjanger;
+	}
+
+	public int hashCode() {
+	    Integer temp = filmNr; 
+	    return temp.hashCode(); 
+	} 
+	
 	public boolean equals(int filmNr) {
 		return this.filmNr == filmNr;
 	}

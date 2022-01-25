@@ -1,8 +1,12 @@
 package no.hvl.data102.adt;
 
+import java.util.HashMap;
+
 import no.hvl.data102.Film;
+import no.hvl.data102.Sjanger;
 
 public interface FilmarkivADT {
+	
 
 	/**
 	 * Viser en film
@@ -34,6 +38,11 @@ public interface FilmarkivADT {
 	 * @return tabell med filmer som har delstreng i tittel
 	 */
 	Film[] soekTittel(String delstreng);
+	
+	
+	
+	Film[] soekProdusent(String delstreng);
+
 
 	/**
 	 * Finner antall filmer med gitt sjanger
