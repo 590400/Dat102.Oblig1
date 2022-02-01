@@ -1,13 +1,24 @@
 package no.hvl.data102.adt;
 
-import java.util.HashMap;
-
 import no.hvl.data102.Film;
 import no.hvl.data102.Sjanger;
 
 public interface FilmarkivADT {
 	
+	/**
 
+     * Hente en film med gitt nr fra arkivet
+
+     *
+
+     * @param nr nummer på film som skal hentes.
+
+     * @return film med gitt nr. Om nr ikke finnes, returneres null.
+
+     */
+
+    Film finnFilm(int nr);
+    
 	/**
 	 * Viser en film
 	 * 

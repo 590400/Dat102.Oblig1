@@ -16,14 +16,19 @@ public class Filmarkiv implements FilmarkivADT {
 	}
 
 	@Override
-	public void visFilm(int nr) {
+	public Film finnFilm(int nr) {
 		for (Film a : filmArkiv) {
 			
 			if (a != null) 
 				if(a.getFilmNr() == nr)
-				System.out.println(a);
+				return a;
 		}
+		return null;
 
+	}
+	
+	public void visFilm(int nr) {
+		System.out.println(finnFilm(nr).toString());
 	}
 
 	@Override
